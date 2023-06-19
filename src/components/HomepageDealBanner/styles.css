@@ -1,0 +1,42 @@
+.hom-ban-main-container{
+    border: 1px solid orange;
+    width: 100%;
+    min-width: 40vw;
+    height: 40%;
+    min-height: 8vh;
+    display: flex;
+}
+
+.hom-ban-com-container{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    background-color: #0067B8;
+}
+
+.hom-ban-text-style{
+    font-size: 100%;
+    color: aliceblue;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hom-ban-icon-style{
+    color: aliceblue;
+    margin-left: 5px;
+}
+
+.hom-ban-text-style:hover{
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.hom-ban-text-style:hover{
+    .hom-ban-icon-style{
+        transition: 0.3s ease-in;
+        transform: translateX(30%);
+    }
+}
