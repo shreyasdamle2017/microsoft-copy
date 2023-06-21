@@ -3,6 +3,7 @@ import './styles.css';
 import {VscSearch} from 'react-icons/vsc';
 import {AiOutlineShoppingCart, AiOutlineLogin} from 'react-icons/ai';
 import {BsChevronDown} from 'react-icons/bs';
+import {RxHamburgerMenu} from 'react-icons/rx';
 
 
 const NavbarComponent = () => {
@@ -20,10 +21,12 @@ const NavbarComponent = () => {
     ]
 
     const [windowSize, setWindowSize] = useState(window.innerWidth);
+    const [navCont, setNavCont] = useState(sampleData);
+    const [flag, setFlag] = useState(false);
 
     const handleResize = () => {
         setWindowSize(window.innerWidth);
-      };  
+    };  
     useEffect(() => {
         window.addEventListener('resize', handleResize);
 
@@ -32,19 +35,28 @@ const NavbarComponent = () => {
     };
     }, [])
 
+
+
+
   return (
     <div className='navbar-main-contaniner'>
       <div className='nav-com-fl1-container'>
         <div className='nav-com-fl1-items'>
             <ul className='nav-com-list-container'>
+                {
+                    windowSize <= 800 && <RxHamburgerMenu />
+                }
                 <li className='text-style-nav-item'>Microsoft Logo</li>
                 {sampleData.map((item,index) => {
                     if(((windowSize/ (index+1)) > 170) && windowSize > 800){
-                        console.log('The equation --- ',(windowSize/ (index+1)), index)
                         return  <li key={item.id} className='text-style-nav-item'>{item.navTitle}</li>
                     }
                 })}
-                
+                {/*windowSize <1360 && <ul className='text-style-nav-item nav-com-drop-cont'> More {sampleData.map((item,index) => {
+                    if(((windowSize/ (index+1)) <= 170) && windowSize > 800){
+                        return  <li key={item.id} className='nav-com-drpdwn-item'>{item.navTitle}</li>
+                    }
+                })} </ul> */}
             </ul>
         </div>
       </div>
