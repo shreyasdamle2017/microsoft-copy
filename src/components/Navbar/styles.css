@@ -55,6 +55,16 @@
     text-decoration-skip-ink: none;
 }
 
+.nav-com-drop-cont{
+    position: relative;
+    display: block;
+}
+
+.nav-com-drpdwn-item{
+    display: block;
+    position: top;
+}
+
 @media (max-width: 1150px) {
     .nav-item-span-text {
       display: none;
